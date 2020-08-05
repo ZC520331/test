@@ -1,3 +1,4 @@
+git commit '之后修改文件内容'
 MVC:
 	用户对view的操作交给controller处理,controler中响应用户的事件,
 	调用model的接口对数据进行操作,model发生变化通知相关视图进行更新 
