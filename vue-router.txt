@@ -1,0 +1,20 @@
+vue-router钩子函数
+全局的：
+ 前置守卫router.beforeEach((to,from,next)=>{}})
+ 解析守卫router.beforeResolve((to,from,next)=>{}})
+ 后置守卫router.afterEach((to,from)=>{}})
+组件的：
+ beforeRouteEnter(在渲染该组件的对应路由被 confirm 前调用) 
+ beforeRouteUpdate(当前路由改变,依然渲染该组件时调用) 
+ beforeRouteLeave(离开该组件对应路由时被调用)
+路由独享的守卫：beforeEnter: (to, from, next) => { }),也就是router.js里面添加一个选项
+vue-router完整的导航解析流程
+导航被触发->在失活的组件里调用beforeRouteLeave->调用全局beforeEach
+->在复用的组件调用beforeRouteUpdate->调用路由配置里的beforeEnter
+->解析异步路由组件->在激活的组件里面调用beforeRouteEnter
+->调用全局beforeResolve守卫->导航被确认调用全局的afterEach()
+->DOM更新->用创建好的实例调用beforeRouteEnter守卫中传给next的回调函数
+
+route:当前路由对象,router:vue实例下的路由对象
+接受参数：this.$route.query this.$router.parmas
+跳转:<router-link> this.$router.push()
