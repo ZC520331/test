@@ -24,6 +24,9 @@ login_manager.login_view = 'index'
 collection_name = ZhiBoMongoApi(const.DATABASE)
 
 
+def chongtu():
+    return '测试冲突'
+
 @app.route('/api/login',methods=["GET","POST"])
 @limiter.exempt
 def login():
