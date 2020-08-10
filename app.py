@@ -24,6 +24,9 @@ login_manager.login_view = 'index'
 collection_name = ZhiBoMongoApi(const.DATABASE)
 
 
+def mac_mini():
+    return "mac_mini 添加 20200810"
+
 @app.route('/api/login',methods=["GET","POST"])
 @limiter.exempt
 def login():
