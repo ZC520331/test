@@ -26,6 +26,8 @@ collection_name = ZhiBoMongoApi(const.DATABASE)
 
 def mac_mini():
     return "mac_mini 添加 20200810"
+def chongtu():
+    return '测试冲突'
 
 @app.route('/api/login',methods=["GET","POST"])
 @limiter.exempt
